@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>youtube clone</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+    <style>
+        .header {
+            height: 55px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(146, 146, 146);
+        }
+
+        .start-section {
+            align-items: center;
+            display: flex;
+
+
+        }
+
+        .middle-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            margin-left: 300px;
+            width: 0;
+
+
+        }
+
+        .end-section {
+            width: 150px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .video-pic {
+            width: 100%;
+        }
+
+        .text {
+
+            margin-top: 5px;
+            font-family: Roboto, Arial;
+            font-size: 14px;
+            font-weight: 650;
+            margin-bottom: 12px;
+
+        }
+
+        .texttwo {
+            margin-top: 3px;
+            font-size: 12px;
+            font-family: Roboto, Arial;
+            color: rgb(96, 96, 96);
+        }
+
+        .textthree {
+            margin-top: 4px;
+            margin-bottom: 4px;
+            font-size: 12px;
+            font-family: Roboto, Arial;
+            color: rgb(96, 96, 96);
+
+        }
+
+
+        .video-info-grid {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+        }
+
+        .profile {
+            width: 35px;
+            vertical-align: top;
+            border-radius: 50px;
+        }
+
+        .image {
+            margin-bottom: 12px;
+
+        }
+
+        .video-info-grid {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+
+        }
+
+        .dp {
+            vertical-align: top;
+            display: inline-block;
+            width: 35px;
+
+        }
+
+        .sundar-dp {
+            width: 35px;
+            border-radius: 50px;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .title {
+            margin-top: 5px;
+            font-family: Roboto, Arial;
+            font-size: 14px;
+            font-weight: 650;
+            margin-bottom: 12px;
+
+
+        }
+
+        .name {
+            margin-top: 3px;
+            font-size: 12px;
+            font-family: Roboto, Arial;
+            color: rgb(96, 96, 96);
+        }
+
+        .stats {
+            margin-top: 4px;
+            margin-bottom: 4px;
+            font-size: 12px;
+            font-family: Roboto, Arial;
+            color: rgb(96, 96, 96);
+
+        }
+
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            row-gap: 14px;
+            column-gap: 16px;
+        }
+
+        .jmcimage {
+            width: 100%;
+        }
+
+        .video-info-grid {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+        }
+
+        .cropped-pic {
+            vertical-align: top;
+            display: inline-block;
+            width: 35px;
+        }
+
+
+        .inside-cropped {
+            width: 35px;
+            vertical-align: top;
+            border-radius: 50px;
+            display: inline-block;
+        }
+
+
+        .para1 {
+            margin-top: 5px;
+            font-family: Roboto, Arial;
+            font-size: 14px;
+            font-weight: 650;
+            margin-bottom: 12px;
+
+        }
+
+        .para2,
+        .para3 {
+            font-family: roboto, Arial;
+            font-size: 12px;
+            color: rgb(96, 96, 96);
+
+
+        }
+
+        .para2 {
+            margin-bottom: 4px;
+        }
+
+        .para3 {
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
+
+        .img-clarity {
+            width: 100%;
+        }
+
+        .video-info-grid {
+            display: grid;
+            grid-template-columns: 50px 1fr;
+        }
+
+        .small-constainer {
+            display: inline-block;
+            width: 35px;
+            vertical-align: top;
+        }
+
+        .small-img {
+            display: inline-block;
+            width: 35px;
+            vertical-align: top;
+            border-radius: 50px;
+        }
+
+        .first {
+            font-family: Roboto, Arial;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 12px;
+        }
+
+        .second {
+            margin-top: 3px;
+            font-size: 12px;
+            font-family: Roboto, Arial;
+            color: rgb(96, 96, 96);
+
+        }
+
+        .third {
+            margin-top: 4px;
+            margin-bottom: 4px;
+            font-size: 12px;
+            font-family: Roboto, Arial;
+            color: rgb(96, 96, 96);
+        }
+
+        body {
+            margin: 0;
+            padding-top: 80px;
+            padding-left: 80px;
+
+        }
+
+        .hamburger-menu {
+            height: 25px;
+            margin-left: 20px;
+            margin-right: 20px;
+
+        }
+
+        .utube-logo {
+            height: 70px;
+            margin-left: 20px;
+        }
+
+        .voice {
+            height: 20px;
+            border: none;
+            align-items: center;
+
+        }
+
+        .search-bar {
+            height: 30px;
+            border-radius: 30px;
+            border-color: gray;
+            flex: 1;
+            padding-left: 10px;
+            margin-right: 50px;
+            box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+
+        }
+
+        .btn {
+            margin-right: 300px;
+        }
+
+        .notify {
+            width: 30px;
+            height: 30px;
+            margin-left: 30px;
+        }
+
+        .pp {
+            width: 40px;
+            height: 40px;
+            border-radius: 20px;
+            margin-right: 20px;
+
+
+        }
+
+        .sideBar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 55px;
+            background-color: white;
+            width: 80px;
+
+        }
+
+
+
+
+    
+    </style>
+
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="start-section">
+            <img class="hamburger-menu" src="Icons.Css/menu.png" alt="">
+            <img class="utube-logo" src="Icons.Css/youtube.png" alt="">
+        </div>
+        <div class="middle-section">
+            <input class="search-bar" type="text" placeholder="Search">
+            <button class="btn">
+                <img class="voice" src="Icons.Css/voice-settings.png" alt="">
+            </button>
+        </div>
+        <div class="end-section">
+            <img class="notify" src="Icons.Css/bell.png" alt="">
+            <img class="pp" src="Thumbnail/channelpic.jpg" alt="">
+
+        </div>
+    </div>
+    <div class="sideBar">sidebar
+
+    </div>
+
+
+
+    <div class="video-grid">
+        <div class="video-prev">
+            <div class="image">
+                <img class="video-pic" src="Thumbnail/sundar.webp" alt="no pic">
+            </div>
+            <div class="video-Time">14:20</div>
+            <div class="video-info-grid">
+                <div class="channel-pp">
+                    <img class="profile" src="Thumbnail/pp.jpg" alt="null">
+
+                </div>
+                <div class="video-info">
+                    <p class="title">Talking Tech and AI with Google CEO Sundar Pichai! </p>
+
+
+                    <p class="name">Marques Brownlee</p>
+                    <p class="stats">11M views &#183 4 days ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="next">
+            <div class="next-img">
+                <img class="video-pic" src="Thumbnail/sundar day.webp" alt="null">
+            </div>
+            <div class="video-info-grid">
+                <div class="dp">
+                    <img class="sundar-dp" src="Thumbnail/dp.jpg" alt="null">
+                </div>
+                <div class="info">
+                    <p class="text">A Day In The Life Of Sundar Pichai (Google's CEO)</p>
+                    <p class="texttwo">simply tech</p>
+                    <p class="textthree">11M views &#183 4 days ago</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="Room-for-squares">
+            <div class="jm">
+                <img class="jmcimage" src="Thumbnail/room.webp" alt="null">
+            </div>
+            <div class="video-info-grid">
+                <div class="cropped-pic">
+                    <img class="inside-cropped" src="Thumbnail/him.jpg" alt="null">
+                </div>
+                <div class="texts">
+                    <p class="para1">John Mayer Room For Squares - full album (Aware Records release 2001)
+                    </p>
+                    <p class="para2">
+                        Henry Hart</p>
+                    <p class="para3">46K views 4 years ago</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="third">
+            <div class="img-container">
+                <img class="img-clarity" src="Thumbnail/clarity.webp" alt="">
+            </div>
+            <div class="video-info-grid">
+                <div class="small-container">
+                    <img class="small-img" src="Thumbnail/she.jpg" alt="">
+                </div>
+                <div class="blabla">
+                    <p class="first">i chose the slow life...</p>
+                    <p class="second">Leah's Fieldnotes</p>
+                    <p class="third">4m views 2days ago</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="next">
+            <div class="next-img">
+                <img class="video-pic" src="Thumbnail/sundar day.webp" alt="null">
+            </div>
+            <div class="video-info-grid">
+                <div class="dp">
+                    <img class="sundar-dp" src="Thumbnail/dp.jpg" alt="null">
+                </div>
+                <div class="info">
+                    <p class="text">A Day In The Life Of Sundar Pichai (Google's CEO)</p>
+                    <p class="texttwo">simply tech</p>
+                    <p class="textthree">11M views &#183 4 days ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="third">
+            <div class="img-container">
+                <img class="img-clarity" src="Thumbnail/clarity.webp" alt="">
+            </div>
+            <div class="video-info-grid">
+                <div class="small-container">
+                    <img class="small-img" src="Thumbnail/she.jpg" alt="">
+                </div>
+                <div class="blabla">
+                    <p class="first">i chose the slow life...</p>
+                    <p class="second">Leah's Fieldnotes</p>
+                    <p class="third">4m views 2days ago</p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="next">
+            <div class="next-img">
+                <img class="video-pic" src="Thumbnail/sundar day.webp" alt="null">
+            </div>
+            <div class="video-info-grid">
+                <div class="dp">
+                    <img class="sundar-dp" src="Thumbnail/dp.jpg" alt="null">
+                </div>
+                <div class="info">
+                    <p class="text">A Day In The Life Of Sundar Pichai (Google's CEO)</p>
+                    <p class="texttwo">simply tech</p>
+                    <p class="textthree">11M views &#183 4 days ago</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="video-prev">
+            <div class="image">
+                <img class="video-pic" src="Thumbnail/sundar.webp" alt="no pic">
+            </div>
+            <div class="video-info-grid">
+                <div class="channel-pp">
+                    <img class="profile" src="Thumbnail/pp.jpg" alt="null">
+
+                </div>
+                <div class="video-info">
+                    <p class="title">Talking Tech and AI with Google CEO Sundar Pichai! </p>
+
+
+                    <p class="name">Marques Brownlee</p>
+                    <p class="stats">11M views &#183 4 days ago</p>
+                </div>
+            </div>
+        </div>
+        <div class="next">
+            <div class="next-img">
+                <img class="video-pic" src="Thumbnail/sundar day.webp" alt="null">
+            </div>
+            <div class="video-info-grid">
+                <div class="dp">
+                    <img class="sundar-dp" src="Thumbnail/dp.jpg" alt="null">
+                </div>
+                <div class="info">
+                    <p class="text">A Day In The Life Of Sundar Pichai (Google's CEO)</p>
+                    <p class="texttwo">simply tech</p>
+                    <p class="textthree">11M views &#183 4 days ago</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
